@@ -1,0 +1,3 @@
+class ciao
+ciao
+end
