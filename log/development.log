@@ -8875,3 +8875,39 @@ Completed 500 Internal Server Error in 176ms (ActiveRecord: 11.9ms | Allocations
 ActiveRecord::InvalidForeignKey (SQLite3::ConstraintException: FOREIGN KEY constraint failed):
   
 app/controllers/articles_controller.rb:39:in `destroy'
+Started GET "/" for 127.0.0.1 at 2023-09-16 22:04:42 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (3.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Count (4.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."status" = ?[0m  [["status", "public"]]
+  ↳ app/models/concerns/visible.rb:12:in `public_count'
+  [1m[36mArticle Load (3.8ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/application (Duration: 188.6ms | Allocations: 20054)
+  Rendered layout layouts/application.html.erb (Duration: 1033.3ms | Allocations: 50863)
+Completed 500 Internal Server Error in 2309ms (ActiveRecord: 27.7ms | Allocations: 64053)
+
+
+  
+ActionView::Template::Error (link_tree argument must be a directory):
+  
+app/assets/config/manifest.js:1
+Started GET "/" for 127.0.0.1 at 2023-09-16 22:07:42 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Count (5.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."status" = ?[0m  [["status", "public"]]
+  ↳ app/models/concerns/visible.rb:12:in `public_count'
+  [1m[36mArticle Load (4.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/application (Duration: 98.2ms | Allocations: 19526)
+  Rendered layout layouts/application.html.erb (Duration: 431.1ms | Allocations: 30395)
+Completed 500 Internal Server Error in 924ms (ActiveRecord: 29.1ms | Allocations: 41166)
+
+
+  
+ActionView::Template::Error (link_tree argument must be a directory):
+  
+app/assets/config/manifest.js:1
